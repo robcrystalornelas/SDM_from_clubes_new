@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Now is the time for my own SDM :)
+
+I'm installing my **libraries**
+```{r}
+library(dismo)
+library(rgbif)
+library(maptools)
+```
+
+
+## Points from GBIF
+
+```{r}
+moncarch_points <- occ_search(scientificName = "Danaus plexippus", 
+                          country = 'MX', fields=c('name','country','countryCode','stateProvince','year','decimalLatitude','decimalLongitude'), limit = 2000)
+moncarch_points <- moncarch_points$data
+```
